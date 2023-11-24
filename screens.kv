@@ -1,0 +1,452 @@
+# these are all of the variables that are defined
+WindowManager:
+    MainWindow:
+    EveWindow:
+    august:
+    september:
+    october:
+    november:
+    december:
+    january:
+    february:
+    march:
+    april:
+    may:
+    june:
+    july:
+# this is the main window's code and functions
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        # to make a label: first declare the label and add the text with a colon and quotations. you can modify the font, color, background color, font size and much more.
+        Image:
+            source: 'logo.png'
+            size: self.texture_size
+            keep_ratio: True
+            allow_strech: True
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.pos
+
+        Label:
+            text: "Events of  2023 - 2024"
+            font_size: 50
+            color: 0, 0, 0, 1
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        # to make a button: first declare what you want to make, then do the same with the label. Modify the text and other things.
+        Button:
+            text: "Proceed"
+            font_size: 30
+            background_color: (20/255,50/255,200/255,1)
+            size_hint: 1, 0.7
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "left"
+<EveWindow>:
+    name: "eventWindow"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "Select a Month"
+            font_size: 25
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            background_color: (0/255,50/255,0/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "August"
+            font_size: 30
+            background_color: (255/255, 150/255, 100/255, 1)
+            on_release:
+                app.root.current = "august"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "September"
+            font_size: 30
+            background_color: (255/255, 192/255, 60/255, 1)
+            on_release:
+                app.root.current = "september"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "October"
+            font_size: 30
+            background_color: (255/255, 140/255, 40/255, 1)
+            on_release:
+                app.root.current = "october"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "November"
+            font_size: 30
+            background_color: (10/255, 80/255, 180/255, 1)
+            on_release:
+                app.root.current = "november"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "December"
+            font_size: 30
+            background_color: (20/255, 60/255, 255/255, 1)
+            on_release:
+                app.root.current = "december"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "January"
+            font_size: 30
+            background_color: (100/255, 100/255, 200/255, 1)
+            on_release:
+                app.root.current = "january"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "February"
+            font_size: 30
+            background_color: (200/255, 70/255, 130/255, 1)
+            on_release:
+                app.root.current = "february"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "March"
+            font_size: 30
+            background_color: (255/255, 174/255, 55/255, 1)
+            on_release:
+                app.root.current = "march"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "April"
+            font_size: 30
+            background_color: (140/255, 180/255, 60/255, 1)
+            on_release:
+                app.root.current = "april"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "May"
+            font_size: 30
+            background_color: (80/255, 255/255, 90/255, 1)
+            on_release:
+                app.root.current = "may"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "June"
+            font_size: 30
+            background_color: (255/255, 120/255, 50/255, 1)
+            on_release:
+                app.root.current = "june"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "July"
+            font_size: 30
+            background_color: (255/255, 80/255, 80/255, 1)
+            on_release:
+                app.root.current = "july"
+                root.manager.transition.direction = "left"
+        Button:
+            text: "Return"
+            font_size: 25
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+<august>:
+    name: "august"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 28th - School Reopens for Yr. 1-9 \n• 29th - FS2 Staggered Start"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<september>:
+    name: "september"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 29th - Prophet's Birthday"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<october>:
+    name: "october"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 5th - World Teachers Day \n• 13th - SEWA DAY/Breast Cancer Awareness Day \n• 16th to 20th - Mid Term Break \n• 24th - United Nation Day"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<november>:
+    name: "november"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 3rd - Flag Day\n• 10th - WSA School Photos \n• 13th - World Kindness Day \n• 17th - Dubai Fitness Challenge \n• 20th - Children's Dreams and Aspirations \n• 24th - WSA National Day \n• 30th - Marty's Day"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<december>:
+    name: "december"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 1st - National Day Leave \n• 7th - Arabic Day \n• 8th - EY Christmas Jumper Day End of Term 1 \n• 11th to 30th - Winter Break"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<january>:
+    name: "january"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 1st - New Year \n• 2nd - Term 2 Commence"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<february>:
+    name: "february"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 6th - Safer Internet Day \n• 7th - World Read Aloud Day \n• 8th - Israa we Al Mearaj (TBC) \n• 9th - International Day \n• 19th to 21st - Mid Term Break \n• 23rd - Gorgean (15 Shaabaan) (TBC)"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<march>:
+    name: "march"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 6th - International Women's Day \n• 7th - World Book Day \n• 8th - Ramadan Starts(TBC) \n• 18th - World Happiness Day \n• 21st - Mother's Day \n• 22nd - End of Term 2"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<april>:
+    name: "april"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 15th - Term 3 Commence \n• 22nd - Earth Day"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<may>:
+    name: "may"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• No Events"
+            color: 0,0,0,1
+            font_size: 30
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<june>:
+    name: "june"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 17th to 18th - EID AL AHDA (TBC) \n• 21st - Father's Day"
+            font_size: 30
+            color: 0,0,0,1
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
+<july>:
+    name: "july"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            text: "• 5th - End of Academic Year"
+            font_size: 30
+            color: 0,0,0,1
+            background_color: (255/255,255/255,255/255,1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        Button:
+            text: "Back"
+            font_size: 30
+            size_hint: 1,0.5
+            background_color: (200/255,20/255,20/255,1)
+            on_release:
+                app.root.current = "eventWindow"
+                root.manager.transition.direction = "right"
